@@ -1,0 +1,27 @@
+//
+//  MylocationsPrefixHeader.pch
+//  MyLocations
+//
+//  Created by  Jierism on 16/8/11.
+//  Copyright © 2016年  Jierism. All rights reserved.
+//
+
+#ifndef MylocationsPrefixHeader_pch
+#define MylocationsPrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import <CoreLocation/CoreLocation.h>
+#import <CoreData/CoreData.h>
+#import <MapKit/MapKit.h>
+extern NSString * const ManagedObjectContextSaveDidFailNotification;
+#define FATAL_CORE_DATA_ERROR(__error__)\
+__FILE__,__LINE__,error,[error userInfo];\
+[[NSNotificationCenter defaultCenter] postNotificationName:\
+ManagedObjectContextSaveDidFailNotification object:error];
+
+#endif /* MylocationsPrefixHeader_pch */
+
+
